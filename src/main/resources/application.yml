@@ -1,0 +1,11 @@
+eureka:
+  client:
+    service-url:
+#设置注册中心的地址
+     defaultZone: http://localhost:8080/eureka/
+#注册中心不显示在服务实例中
+    register-with-eureka: false
+spring:
+  application:
+#设置项目的名称
+    name: eureka-reginster-center

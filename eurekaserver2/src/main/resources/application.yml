@@ -8,4 +8,4 @@ eureka:
 spring:
   application:
 #设置项目的名称
-    name: eureka-reginster-center-01
+    name: eureka-reginster-center-02

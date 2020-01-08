@@ -1,5 +1,6 @@
 package com.shenghail.order.controller;
 
+import com.shenghail.order.client.ProductClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -24,6 +25,9 @@ public class ClientController {
     private RestTemplate restTemplate;
 
     @Autowired
+    private ProductClient productClient;
+
+    @Autowired
     private LoadBalancerClient loadBalancerClient;
 
     /**
@@ -45,5 +49,15 @@ public class ClientController {
         String ret = restTemplate.getForObject("http://product/msg", String.class);
         System.out.println(ret);
         return ret;
+    }
+
+    /**
+     * 使用Feign进行应用间通信
+     * @return
+     */
+    @GetMapping("/feign/getProductMsg")
+    public String getMsgWithFeign() {
+        String msg = productClient.getMsg();
+        return msg;
     }
 }

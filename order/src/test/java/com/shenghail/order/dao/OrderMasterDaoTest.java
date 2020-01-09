@@ -31,8 +31,8 @@ class OrderMasterDaoTest{
         orderMaster.setBuyerPhone("1829342057");
         orderMaster.setBuyerAddress("北京市昌平区");
         orderMaster.setOrderAccount(new BigDecimal(100));
-        orderMaster.setOrderStatus(OrderStatus.NEW_ORDER);
-        orderMaster.setPayStatus(PayStatus.UN_PAY);
+        orderMaster.setOrderStatus(OrderStatus.NEW_ORDER.getCode());
+        orderMaster.setPayStatus(PayStatus.UN_PAY.getCode());
         orderMaster.setCreateTime(new Date());
         orderMaster.setUpdateTime(new Date());
         OrderMaster save = orderMasterDao.save(orderMaster);

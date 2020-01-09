@@ -21,8 +21,8 @@ public class OrderMaster {
     private String buyerAddress;
     private String buyerOpenId;
     private BigDecimal orderAccount;
-    private PayStatus payStatus;
-    private OrderStatus orderStatus;
+    private Integer payStatus;
+    private Integer orderStatus;
     private Date createTime;
     private Date updateTime;
 

@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 @RestController
 public class ClientController {
     /**
@@ -58,6 +61,7 @@ public class ClientController {
     @GetMapping("/feign/getProductMsg")
     public String getMsgWithFeign() {
         String msg = productClient.getMsg();
+        productClient.listForOrder(Arrays.asList());
         return msg;
     }
 }

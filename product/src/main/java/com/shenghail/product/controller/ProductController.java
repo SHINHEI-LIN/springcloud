@@ -1,5 +1,6 @@
 package com.shenghail.product.controller;
 
+import com.shenghail.common.model.CommonModel;
 import com.shenghail.product.dao.ProductCategoryDao;
 import com.shenghail.product.model.ProductCategory;
 import com.shenghail.product.model.ProductInfo;

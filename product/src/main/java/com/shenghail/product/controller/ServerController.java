@@ -4,6 +4,7 @@ import com.shenghail.product.dto.CartDTO;
 import com.shenghail.product.model.ProductInfo;
 import com.shenghail.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,9 @@ public class ServerController {
 
     @Autowired
     private ProductService productService;
+
+    @Value("${env}")
+    private String env;
 
     @GetMapping("/msg")
     public String msg() {
@@ -36,5 +40,10 @@ public class ServerController {
     @PostMapping("/decreaseStock")
     public void decreaseStock(@RequestBody List<CartDTO> cartDTOList) {
         productService.decreaseStock(cartDTOList);
+    }
+
+    @GetMapping("/env")
+    public String getEnv() {
+        return env;
     }
 }

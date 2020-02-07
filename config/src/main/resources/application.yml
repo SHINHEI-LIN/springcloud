@@ -11,7 +11,7 @@ spring:
           password: linshenghai079..
   rabbitmq:
     host: 111.230.169.249
-    port: 5673
+    port: 5672
 eureka:
   client:
     service-url:

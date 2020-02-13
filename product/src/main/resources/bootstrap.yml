@@ -7,11 +7,29 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+#     设置配置中心CONFIG的地址
+      uri: http://localhost:9003/
+    bus:
+      trace:
+        enabled: true
+
   rabbitmq:
     host: 111.230.169.249
-    port: 5673
+    port: 5672
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka/
+
+logging:
+  level:
+    root: info
+    org.mybatis: debug
+    java.sql: debug
+#   在启动日志中打印Mapping路径
+    org.springframework.web: trace
+management:
+  endpoint:
+    bus-refresh:
+      enabled: true

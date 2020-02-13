@@ -5,11 +5,14 @@ import com.shenghail.product.model.ProductInfo;
 import com.shenghail.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+// 只有配置了该注解的地方才能使用到配置中心刷新的配置
+@RefreshScope
 public class ServerController {
 
     @Autowired

@@ -12,15 +12,30 @@ spring:
   rabbitmq:
     host: 111.230.169.249
     port: 5672
+#    默认是使用guest账户登陆
+#    username: linghai
+#    password: 123456
 eureka:
   client:
     service-url:
      defaultZone: http://localhost:8080/eureka/
 management:
+#SpringCloud 2.0.0版本以后暴露接口方式
   endpoints:
     web:
       exposure:
         include: "*"
 
+logging:
+  level:
+    root: info
+    org.mybatis: debug
+    java.sql: debug
+#   在启动日志中打印Mapping路径
+    org.springframework.web: trace
+
+#security:                       #是否开启基本的鉴权，默认为true
+#  basic:
+#    enabled: false
 
 
